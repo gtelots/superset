@@ -92,13 +92,49 @@ class CeleryConfig:
 
 CELERY_CONFIG = CeleryConfig
 
-FEATURE_FLAGS = {"ALERT_REPORTS": True}
+FEATURE_FLAGS = {
+    "ALERT_REPORTS": True,
+    "DASHBOARD_RBAC": True,
+    "DASHBOARD_VIRTUALIZATION": True,
+    "DATAPANEL_CLOSED_BY_DEFAULT": True,
+    "EMBEDDABLE_CHARTS": True,
+    "EMBEDDED_SUPERSET": True,
+    "ENABLE_TEMPLATE_PROCESSING": True,
+    "ESCAPE_MARKDOWN_HTML": True,
+    "LISTVIEWS_DEFAULT_CARD_VIEW": True,
+    "SCHEDULED_QUERIES": True,
+    "SQL_VALIDATORS_BY_ENGINE ": True,
+    "THUMBNAILS": True,
+}
 ALERT_REPORTS_NOTIFICATION_DRY_RUN = True
 WEBDRIVER_BASEURL = "http://superset:8088/"
 # The base URL for the email report hyperlinks.
 WEBDRIVER_BASEURL_USER_FRIENDLY = WEBDRIVER_BASEURL
 
 SQLLAB_CTAS_NO_LIMIT = True
+
+PUBLIC_ROLE_LIKE = "Gamma"
+ENABLE_PROXY_FIX = True
+TALISMAN_ENABLED = False
+HTTP_HEADERS = {'X-Frame-Options': 'ALLOWALL'}
+ENABLE_CORS = True
+CORS_OPTIONS = {
+    'supports_credentials': True,
+    'allow_headers': ['*'],
+    'resources': ['*'],
+    'origins': ['*']
+}
+
+WTF_CSRF_ENABLED = False
+
+# GUEST_ROLE_NAME = "Gamma"
+# GUEST_TOKEN_JWT_SECRET = "test-guest-secret-change-me"
+# GUEST_TOKEN_JWT_ALGO = "HS256"
+# GUEST_TOKEN_HEADER_NAME = "X-GuestToken"
+# GUEST_TOKEN_JWT_EXP_SECONDS = 300  # 5 minute
+
+
+MAPBOX_API_KEY = "pk.eyJ1IjoidHR1bmdibXQiLCJhIjoiY2xwcWxha3ZpMDF1ZzJrbzhoNjVkaDh1cSJ9.zBhbsxwKaFU5ezIbQ3ITzw"
 
 #
 # Optionally import superset_config_docker.py (which will have been included on
